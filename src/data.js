@@ -1,6 +1,6 @@
 
 export const briefingData = {
-  title: "Scientific Legacy Pipeline",
+  title: "Validação Estratégica",
   date: "04 de fevereiro de 2026",
   preparedBy: "Fabiana Furtado",
   objective: "Validar Briefing e Perguntas Estratégicas",
