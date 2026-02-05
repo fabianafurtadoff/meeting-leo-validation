@@ -1,18 +1,41 @@
-
 import { useState } from 'react';
-import { briefingData, validationQuestions } from './data';
+import { briefingData, validationQuestions, detailedBriefing } from './data';
 
 function App() {
-  const [appState, setAppState] = useState('briefing'); // briefing, validation, summary
+  const [appState, setAppState] = useState('briefing'); // briefing, presentation, validation, summary
   const [currentBlockIndex, setCurrentBlockIndex] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [answers, setAnswers] = useState({});
 
   const currentBlock = validationQuestions[currentBlockIndex];
   const totalBlocks = validationQuestions.length;
-  const progress = ((currentBlockIndex) / totalBlocks) * 100;
+  // Progress bar logic adapts based on state
+  let progress = 0;
+  if (appState === 'presentation') {
+    progress = ((currentSlideIndex + 1) / detailedBriefing.length) * 100;
+  } else if (appState === 'validation') {
+    progress = ((currentBlockIndex + 1) / totalBlocks) * 100;
+  }
 
   const handleStart = () => {
-    setAppState('validation');
+    setAppState('presentation');
+  };
+
+  const handleNextSlide = () => {
+    if (currentSlideIndex < detailedBriefing.length - 1) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+      window.scrollTo(0, 0);
+    } else {
+      setAppState('validation');
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (currentSlideIndex > 0) {
+      setCurrentSlideIndex(currentSlideIndex - 1);
+    } else {
+      setAppState('briefing');
+    }
   };
 
   const handleNextBlock = () => {
@@ -28,7 +51,9 @@ function App() {
     if (currentBlockIndex > 0) {
       setCurrentBlockIndex(currentBlockIndex - 1);
     } else {
-      setAppState('briefing');
+      // Go back to the last slide of presentation
+      setAppState('presentation');
+      setCurrentSlideIndex(detailedBriefing.length - 1);
     }
   };
 
@@ -51,7 +76,7 @@ function App() {
     <div className="container fade-in">
       <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
         <h3 style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.8rem' }}>
-          Meeting Assistant
+          Meeting Assistant {appState === 'presentation' ? '• BRIEFING' : appState === 'validation' ? '• VALIDAÇÃO' : ''}
         </h3>
         <h1>{briefingData.title}</h1>
       </header>
@@ -60,10 +85,24 @@ function App() {
         <BriefingView onStart={handleStart} data={briefingData} />
       )}
 
+      {appState === 'presentation' && (
+        <>
+          <div className="progress-bar">
+            <div className="progress-fill" style={{ width: `${progress}%`, background: '#38bdf8' }}></div>
+          </div>
+          <BriefingSlide
+            slide={detailedBriefing[currentSlideIndex]}
+            onNext={handleNextSlide}
+            onPrev={handlePrevSlide}
+            isLast={currentSlideIndex === detailedBriefing.length - 1}
+          />
+        </>
+      )}
+
       {appState === 'validation' && (
         <>
           <div className="progress-bar">
-            <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+            <div className="progress-fill" style={{ width: `${progress}%`, background: '#22c55e' }}></div>
           </div>
           <QuestionBlock
             block={currentBlock}
@@ -106,17 +145,43 @@ const BriefingView = ({ onStart, data }) => {
       </div>
 
       <div style={{ margin: '2rem 0' }}>
-        <h3>🔎 Pontos Chave para Validação</h3>
+        <h3>🔎 Pontos Chave para Acessar</h3>
         <ul>
-          {data.highlights.map((h, i) => (
-            <li key={i} style={{ marginBottom: '0.5rem' }}>{h}</li>
-          ))}
+          <li style={{ marginBottom: '0.5rem' }}>Apresentação do Briefing Completo (Slide a Slide)</li>
+          <li style={{ marginBottom: '0.5rem' }}>Validação Estratégica Interativa</li>
+          <li style={{ marginBottom: '0.5rem' }}>Geração de Plano de Ação</li>
         </ul>
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
         <button className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }} onClick={onStart}>
-          Iniciar Validação Estratégica &rarr;
+          Iniciar Apresentação &rarr;
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const BriefingSlide = ({ slide, onNext, onPrev, isLast }) => {
+  return (
+    <div className="card fade-in">
+      <div style={{ marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
+        <h2 style={{ marginBottom: '0.5rem', color: '#38bdf8' }}>{slide.title}</h2>
+      </div>
+
+      <div style={{ minHeight: '300px' }}>
+        {slide.content.map((item, idx) => (
+          <div key={idx} style={{ marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#fff' }}>{item.subtitle}</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>{item.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="nav-buttons">
+        <button className="btn" onClick={onPrev}>&larr; Voltar</button>
+        <button className="btn btn-primary" onClick={onNext}>
+          {isLast ? 'Ir para Validação 🎯' : 'Próximo &rarr;'}
         </button>
       </div>
     </div>
@@ -127,7 +192,7 @@ const QuestionBlock = ({ block, answers, onAnswer, onCheckbox, onNext, onPrev, i
   return (
     <div className="card fade-in">
       <div style={{ marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
-        <h2 style={{ marginBottom: '0.5rem' }}>{block.title}</h2>
+        <h2 style={{ marginBottom: '0.5rem', color: '#22c55e' }}>{block.title}</h2>
         <p style={{ color: 'var(--text-secondary)' }}>{block.objective}</p>
       </div>
 

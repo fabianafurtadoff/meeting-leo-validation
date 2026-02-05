@@ -19,6 +19,107 @@ export const briefingData = {
   ]
 };
 
+export const detailedBriefing = [
+  {
+    title: "1. QUEM É LEONARDO FREITAS",
+    content: [
+      { subtitle: "Perfil Profissional", text: "Especialidade: Neurorradiologia. Formação: Medicina (Uberaba) → Radiologia (SP) → Fellowship (BP-SP). 8 anos como staff no Brasil." },
+      { subtitle: "Trajetória nos EUA", text: "Revalidação completa (USMLE) → Match Radiologia → Fellowship Neurorradiologia." },
+      { subtitle: "Posição Atual", text: "Neuroradiologista no Baptist Health South Florida. Professor na FIU. Diretor of Research and Mentorship (FIU)." },
+      { subtitle: "Filosofia", text: "\"Clinical work is ephemeral. Publications are permanent.\" O trabalho clínico não deixa registro, publicações criam legado." }
+    ]
+  },
+  {
+    title: "2. O QUE LEONARDO FAZ",
+    content: [
+      { subtitle: "Programa Institucional (FIU)", text: "Dá suporte para residentes, conecta com mentores, aumenta produção científica. É sua CREDENCIAL, não o negócio pessoal." },
+      { subtitle: "Modelo de Co-Autoria Pessoal", text: "1. Recebe casos clínicos. 2. Avalia se é publicável. 3. Co-autora (sênior). 4. A instituição paga ~$1.000+ por artigo publicado." },
+      { subtitle: "Track Record", text: "+15 artigos co-autorados em 2025. Publicações em Arq Neuropsiquiatr, Acta Medica, etc." }
+    ]
+  },
+  {
+    title: "3. O QUE LEONARDO QUER",
+    content: [
+      { subtitle: "Objetivo Principal", text: "Aumentar posicionamento no Instagram/LinkedIn para atrair fluxo constante de casos publicáveis." },
+      { subtitle: "O Que NÃO Quer", text: "❌ Vender cursos. ❌ Mentoria paga. ❌ Conteúdo educacional pesado. ❌ Virar 'influencer'." },
+      { subtitle: "O Que QUER", text: "✅ Ser visto como autoridade em publicação. ✅ Receber casos via DM/Form. ✅ Max 1h/semana de dedicação." }
+    ]
+  },
+  {
+    title: "4. PÚBLICO-ALVO",
+    content: [
+      { subtitle: "Perfil 1: Médicos BR revalidando", text: "Querem fortalecer CV para match nos EUA." },
+      { subtitle: "Perfil 2: Estudantes de Medicina", text: "Buscam cartas de recomendação e diferencial competitivo." },
+      { subtitle: "Perfil 3: Residentes/Fellows nos EUA", text: "Precisam de publicações para carreira acadêmica." }
+    ]
+  },
+  {
+    title: "5. CANAIS E PRESENÇA ATUAL",
+    content: [
+      { subtitle: "Instagram", text: "Bilíngue, mas conteúdo esporádico e sem estratégia clara." },
+      { subtitle: "LinkedIn", text: "Perfil profissional, mas pouco ativo." },
+      { subtitle: "Tentativas Anteriores", text: "ChatGPT direto gerou conteúdo ruim ('Fica uma bosta'). Problemas com imagens e texto genérico." }
+    ]
+  },
+  {
+    title: "6. GARGALOS IDENTIFICADOS",
+    content: [
+      { subtitle: "Gargalo Primário: ATRAÇÃO", text: "O processo de publicação já funciona. O que falta é fluxo constante de casos chegando." },
+      { subtitle: "Gargalo Secundário: TEMPO", text: "Leonardo tem apenas 1h por semana disponível. A solução precisa ser altamente automatizada." }
+    ]
+  },
+  {
+    title: "7. OBJEÇÕES DO PÚBLICO",
+    content: [
+      { subtitle: "Por que publicar?", text: "Muitos não entendem o valor prático na carreira." },
+      { subtitle: "Meu caso é bom?", text: "Medo de rejeição ou de o caso ser 'comum' demais." },
+      { subtitle: "Como funciona?", text: "Processo parece burocrático e complicado." },
+      { subtitle: "Ele vai responder?", text: "Medo de incomodar alguém sênior/diretor." }
+    ]
+  },
+  {
+    title: "8. DIFERENCIAIS DE LEONARDO",
+    content: [
+      { subtitle: "Track Record", text: "+15 artigos em journals internacionais." },
+      { subtitle: "Credencial", text: "Diretor de Pesquisa na FIU, Staff no Baptist Health." },
+      { subtitle: "Bicultural", text: "Conhece a dor do brasileiro e o sistema americano." },
+      { subtitle: "Co-Autoria Genuína", text: "Não é curso pago. É parceria científica." }
+    ]
+  },
+  {
+    title: "9. HIPÓTESES DO PROBLEMA",
+    content: [
+      { subtitle: "Visibilidade", text: "Ninguém sabe que ele oferece isso." },
+      { subtitle: "Educação", text: "Pessoas não veem valor em publicar." },
+      { subtitle: "Conversão", text: "Fricção no processo de contato." },
+      { subtitle: "Diferenciação", text: "Precisa se destacar de outros mentores." }
+    ]
+  },
+  {
+    title: "10. RESTRIÇÕES E REQUISITOS",
+    content: [
+      { subtitle: "Tempo", text: "Limite de 1h/semana." },
+      { subtitle: "Qualidade", text: "Não pode parecer IA genérica. Tem que ter voz de autoridade." },
+      { subtitle: "Custo", text: "Deve ser coberto pelo retorno financeiro dos artigos (ROI)." }
+    ]
+  },
+  {
+    title: "11. MÉTRICAS DE SUCESSO",
+    content: [
+      { subtitle: "Casos Qualificados", text: "Meta: 10-20 formulários/mês." },
+      { subtitle: "Artigos Publicados", text: "Meta: +5-10 artigos/ano." },
+      { subtitle: "Eficiência", text: "Respeitar o limite de 1h/semana." }
+    ]
+  },
+  {
+    title: "12. O PROJETO",
+    content: [
+      { subtitle: "O que NÃO é", text: "Marketing tradicional, infoproduto ou gestão de redes sociais manual." },
+      { subtitle: "O que É", text: "Sistema de IAgilização de atração. Automação com curadoria humana." }
+    ]
+  }
+];
+
 export const validationQuestions = [
   {
     id: "bloco1",
