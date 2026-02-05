@@ -3,7 +3,7 @@ export const briefingData = {
   title: "Sistema de Atração para Co-Autoria Científica",
   date: "04 de fevereiro de 2026",
   preparedBy: "Fabiana Furtado",
-  objective: "Estruturar solução de IA para posicionamento e atração de casos publicáveis",
+  objective: "Validar Briefing e Perguntas Estratégicas",
   leonardoProfile: {
     role: "Neuroradiologista & Director of Research (FIU)",
     philosophy: "Clinical work is ephemeral. Publications are permanent.",
