@@ -181,7 +181,7 @@ const BriefingSlide = ({ slide, onNext, onPrev, isLast }) => {
       <div className="nav-buttons">
         <button className="btn" onClick={onPrev}>&larr; Voltar</button>
         <button className="btn btn-primary" onClick={onNext}>
-          {isLast ? 'Ir para Validação 🎯' : 'Próximo &rarr;'}
+          {isLast ? 'Ir para Validação 🎯' : 'Próximo →'}
         </button>
       </div>
     </div>
@@ -267,7 +267,7 @@ const QuestionBlock = ({ block, answers, onAnswer, onCheckbox, onNext, onPrev, i
       <div className="nav-buttons">
         <button className="btn" onClick={onPrev}>&larr; Voltar</button>
         <button className="btn btn-primary" onClick={onNext}>
-          {isLast ? 'Finalizar e Ver Resumo ✨' : 'Próximo &rarr;'}
+          {isLast ? 'Finalizar e Ver Resumo ✨' : 'Próximo →'}
         </button>
       </div>
     </div>
