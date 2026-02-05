@@ -202,7 +202,7 @@ const QuestionBlock = ({ block, answers, onAnswer, onCheckbox, onNext, onPrev, i
       <div className="nav-buttons">
         <button className="btn" onClick={onPrev}>&larr; Voltar</button>
         <button className="btn btn-primary" onClick={onNext}>
-          {isLast ? 'Finalizar e Ver Resumo ✨' : 'Próximo Bloco &rarr;'}
+          {isLast ? 'Finalizar e Ver Resumo ✨' : 'Próximo &rarr;'}
         </button>
       </div>
     </div>
