@@ -76,7 +76,7 @@ function App() {
     <div className="container fade-in">
       <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
         <h3 style={{ color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.8rem' }}>
-          Meeting Assistant {appState === 'presentation' ? '• BRIEFING' : appState === 'validation' ? '• VALIDAÇÃO' : ''}
+          CognIA OS {appState === 'presentation' ? '• BRIEFING' : appState === 'validation' ? '• VALIDAÇÃO' : ''}
         </h3>
         <h1>{briefingData.title}</h1>
       </header>

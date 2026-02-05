@@ -1,6 +1,6 @@
 
 export const briefingData = {
-  title: "Sistema de Atração para Co-Autoria Científica",
+  title: "Scientific Legacy Pipeline",
   date: "04 de fevereiro de 2026",
   preparedBy: "Fabiana Furtado",
   objective: "Validar Briefing e Perguntas Estratégicas",
